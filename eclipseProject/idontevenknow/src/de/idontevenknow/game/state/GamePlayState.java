@@ -1,29 +1,42 @@
 package de.idontevenknow.game.state;
 
-public class GamePlayState extends State{
+import de.idontevenknow.engine.physic.PhysicSystem;
+import de.idontevenknow.engine.render.RenderSystem;
+import de.idontevenknow.game.gameobjects.GameObject;
+import de.idontevenknow.game.gameobjects.Player;
+
+public class GamePlayState extends State {
+
+	RenderSystem renderSys;
+	PhysicSystem physicSys;
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		for (GameObject i : objects) {
+
+		}
+
 	}
 
 	@Override
 	public void render() {
-		// TODO Auto-generated method stub
-		
+		for(GameObject i : objects){
+			
+		}
+
 	}
 
 	@Override
 	public void init() {
-		// TODO Auto-generated method stub
-		
+		physicSys = new PhysicSystem();
+		renderSys = new RenderSystem();
+		objects.add(new Player());
 	}
 
 	@Override
 	public void clean() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
