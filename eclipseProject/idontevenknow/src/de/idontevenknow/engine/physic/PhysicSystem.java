@@ -4,6 +4,4 @@ import de.idontevenknow.engine.System;
 
 public class PhysicSystem extends System{
     
-    public
-
 }
