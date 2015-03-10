@@ -1,10 +1,10 @@
-package de.idontevenknow.game.menu;
+package de.idontevenknow.game.state;
 
 /**
  * Abstract model of every menu. Alot todo..
  * @author David
  *
  */
-public abstract class Menu {
+public abstract class State {
 	
 }
