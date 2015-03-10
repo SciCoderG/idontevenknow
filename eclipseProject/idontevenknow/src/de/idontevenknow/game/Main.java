@@ -5,11 +5,16 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import static org.lwjgl.opengl.GL11.*;
 
+/**
+ * Initialises OpenGL and the LWJGL Display
+ * @author David
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		initDisplay();
 		initGL();
-		gameLoop();
+		gameLoop(); // runs, until Display.isCloseRequested() becomes true
 		cleanUp();
 	}
 
