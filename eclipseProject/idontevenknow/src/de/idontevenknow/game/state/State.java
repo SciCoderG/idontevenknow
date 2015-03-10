@@ -1,5 +1,7 @@
 package de.idontevenknow.game.state;
 
+import java.util.ArrayList;
+
 import de.idontevenknow.game.gameobjects.GameObject;
 
 /**
@@ -8,15 +10,17 @@ import de.idontevenknow.game.gameobjects.GameObject;
  *
  */
 public abstract class State {
-	private GameObject[] objects;
+	protected ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	
+	public abstract void init();
 	public abstract void update();
 	public abstract void render();
+	public abstract void clean();
 	
-	public GameObject[] getObjects() {
+	public ArrayList<GameObject> getObjects() {
 		return objects;
 	}
-	public void setObjects(GameObject[] objects) {
+	public void setObjects(ArrayList<GameObject> objects) {
 		this.objects = objects;
 	}
 	
