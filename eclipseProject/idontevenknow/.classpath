@@ -12,7 +12,7 @@
 	<classpathentry kind="lib" path="lwjgl/jar/lwjgl_util_applet.jar"/>
 	<classpathentry kind="lib" path="lwjgl/jar/lwjgl_util.jar"/>
 	<classpathentry kind="lib" path="lwjgl/jar/lwjgl-debug.jar"/>
-	<classpathentry kind="lib" path="lwjgl/jar/lwjgl.jar" sourcepath="lwjgl/src/src/java">
+	<classpathentry kind="lib" path="lwjgl/jar/lwjgl.jar" sourcepath="lwjgl/src/src">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/idontevenknow/lwjgl/lwjgl-docs-2.9.3.zip!/javadoc"/>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="idontevenknow/lwjgl/native/windows"/>
