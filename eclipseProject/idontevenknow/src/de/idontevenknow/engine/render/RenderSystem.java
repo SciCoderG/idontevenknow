@@ -44,7 +44,6 @@ public class RenderSystem extends EngineSystem{
 		float y = currentPhysicComponent.getY();
 		float width = currentPhysicComponent.getWidth();
 		float height = currentPhysicComponent.getHeight();
-		System.out.println();
 		glColor3f(color.getRed(), color.getBlue(), color.getGreen());
 		glBegin(GL_QUADS);
 		{

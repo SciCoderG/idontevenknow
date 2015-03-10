@@ -17,11 +17,12 @@ public class GamePlayState extends State {
 	@Override
 	public void update(float delta) {
 		physicSys.update(delta);
+		physicSys.run();
 	}
 
 	@Override
 	public void render() {
-		
+		renderSys.run();
 
 	}
 
