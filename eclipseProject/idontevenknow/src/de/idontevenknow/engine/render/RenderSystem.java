@@ -5,12 +5,12 @@ import static org.lwjgl.opengl.GL11.*;
 import org.lwjgl.util.Color;
 
 import de.idontevenknow.engine.Component;
-import de.idontevenknow.engine.System;
+import de.idontevenknow.engine.EngineSystem;
 import de.idontevenknow.engine.physic.PhysicComponent;
 import de.idontevenknow.game.gameobjects.GameObject;
 
 
-public class RenderSystem extends System{
+public class RenderSystem extends EngineSystem{
 	
 	private RenderComponent currentRenderComponent;
 	private PhysicComponent currentPhysicComponent;
@@ -44,14 +44,14 @@ public class RenderSystem extends System{
 		float y = currentPhysicComponent.getY();
 		float width = currentPhysicComponent.getWidth();
 		float height = currentPhysicComponent.getHeight();
-		
+		System.out.println();
 		glColor3f(color.getRed(), color.getBlue(), color.getGreen());
-		glBegin(GL_TRIANGLE_FAN);
+		glBegin(GL_QUADS);
 		{
 			glVertex2f(x, y);
-			glVertex2f(x, y+height);
-			glVertex2f(x+width, y+height);
-			glVertex2f(x+width, y);
+			glVertex2f(x, y + height);
+			glVertex2f(x + width, y + height);
+			glVertex2f(x + width, y);
 		}
 		glEnd();
 	}

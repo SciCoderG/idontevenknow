@@ -1,10 +1,10 @@
 package de.idontevenknow.engine.physic;
 
 import de.idontevenknow.engine.Component;
-import de.idontevenknow.engine.System;
+import de.idontevenknow.engine.EngineSystem;
 import de.idontevenknow.game.gameobjects.GameObject;
 
-public class PhysicSystem extends System{
+public class PhysicSystem extends EngineSystem{
     
     private float delta = 0;
 	

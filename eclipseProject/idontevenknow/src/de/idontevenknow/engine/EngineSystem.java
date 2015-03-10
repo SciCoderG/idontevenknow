@@ -8,7 +8,7 @@ import de.idontevenknow.game.state.State;
  * @author David
  *
  */
-public abstract class System {
+public abstract class EngineSystem {
 	protected State registeredState;
 	
 	
