@@ -13,6 +13,7 @@ import static org.lwjgl.opengl.GL11.*;
 public class Main {
 	private static float currentTime, startTime, delta;
 	
+	
 	public static void main(String[] args) {
 		initDisplay();
 		initGL();
@@ -28,17 +29,15 @@ public class Main {
 	}
 
 	private static void gameLoop() {
-		startTime = (float)System.currentTimeMillis() / 1000.0f;
+		delta = 1.0f/60.0f;
+		
 		while (!Display.isCloseRequested()) {
 			
 			glClear(GL_COLOR_BUFFER_BIT); // no need for depth buffer bit, no depth needed in 2d
-			
-			currentTime = (float)System.currentTimeMillis()/1000.0f;
-			delta = currentTime-startTime;
 			Game.update(delta);
 			Game.render();
-			
 			Display.update();
+			
 		}
 	}
 
