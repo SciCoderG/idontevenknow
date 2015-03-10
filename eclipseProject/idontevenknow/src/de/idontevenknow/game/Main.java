@@ -12,18 +12,20 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class Main {
 	private static float currentTime, startTime, delta;
+	private static Game game;
 	
 	
 	public static void main(String[] args) {
 		initDisplay();
 		initGL();
-		Game.init();
+		game = new Game();
+		game.init();
 		gameLoop(); // runs, until Display.isCloseRequested() becomes true
 		cleanUp();
 	}
 
 	private static void cleanUp() {
-		Game.clean();
+		game.clean();
 		Display.destroy();
 		System.exit(0);
 	}
@@ -34,8 +36,8 @@ public class Main {
 		while (!Display.isCloseRequested()) {
 			
 			glClear(GL_COLOR_BUFFER_BIT); // no need for depth buffer bit, no depth needed in 2d
-			Game.update(delta);
-			Game.render();
+			game.update(delta);
+			game.render();
 			Display.update();
 			
 		}

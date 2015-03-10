@@ -1,28 +1,35 @@
 package de.idontevenknow.game;
 
+import java.util.Stack;
+
+import de.idontevenknow.game.state.GameState;
+import de.idontevenknow.game.state.State;
+
 
 public class Game {
-	private Game(){} // all methods static, no instance of Game should be made
 	
+	private static Stack<State> states;
+		
 	/**
 	 * TODO
 	 */
-	public static void init(){
-		
+	public void init(){
+		states = new Stack<State>();
+		states.push(new GameState());
 	}
 	
 	// TODO
-	public static void update(float delta){
-		
+	public void update(float delta){
+		states.firstElement().update();
 	}
 	
 	//TODO
-	public static void render(){
-		
+	public void render(){
+		states.firstElement().render();
 	}
 	
 	//TODO
-	public static void clean(){
+	public void clean(){
 		
 	}
 }
