@@ -36,6 +36,7 @@ public class RenderSystem extends EngineSystem{
 	        currentRenderComponent = null;
 	        currentPhysicComponent = null;
 	    }
+		
 	}
 
 	private void render(GameObject go) {
