@@ -9,7 +9,11 @@ public class GamePlayState extends State {
 
 	RenderSystem renderSys;
 	PhysicSystem physicSys;
-
+	
+	public GamePlayState() {
+		super();
+	}
+	
 	@Override
 	public void update(float delta) {
 		physicSys.update(delta);

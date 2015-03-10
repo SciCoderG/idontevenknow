@@ -1,10 +1,6 @@
 package de.idontevenknow.engine.render;
 
-
-import static org.lwjgl.opengl.GL11.GL_TRIANGLE_FAN;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glColor3f;
-import static org.lwjgl.opengl.GL11.glEnd;
+import static org.lwjgl.opengl.GL11.*;
 
 import org.lwjgl.util.Color;
 
@@ -44,14 +40,19 @@ public class RenderSystem extends System{
 
 	private void render(GameObject go) {
 		Color color = currentRenderComponent.getColor();
-		int x = (int)currentPhysicComponent.getX();
-		int y = (int)currentPhysicComponent.getY();
-		int width = (int)currentPhysicComponent.getWidth();
-		int height = (int)currentPhysicComponent.getHeight();
+		float x = currentPhysicComponent.getX();
+		float y = currentPhysicComponent.getY();
+		float width = currentPhysicComponent.getWidth();
+		float height = currentPhysicComponent.getHeight();
 		
 		glColor3f(color.getRed(), color.getBlue(), color.getGreen());
 		glBegin(GL_TRIANGLE_FAN);
-		
+		{
+			glVertex2f(x, y);
+			glVertex2f(x, y+height);
+			glVertex2f(x+width, y+height);
+			glVertex2f(x+width, y);
+		}
 		glEnd();
 	}
 

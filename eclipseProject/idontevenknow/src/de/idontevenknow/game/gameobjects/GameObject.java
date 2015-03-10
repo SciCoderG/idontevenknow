@@ -13,7 +13,11 @@ public abstract class GameObject {
 	protected LinkedList<Component> components;
 	private float velocityX;
 	private float velocityY;
-
+	
+	public GameObject(){
+		components = new LinkedList<Component>();
+	}
+	
 	public LinkedList<Component> getComponents() {
 		return components;
 	}

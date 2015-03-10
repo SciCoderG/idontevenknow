@@ -17,6 +17,10 @@ public abstract class State {
 	public abstract void render();
 	public abstract void clean();
 	
+	public State(){
+		init();
+	}
+	
 	public ArrayList<GameObject> getObjects() {
 		return objects;
 	}
