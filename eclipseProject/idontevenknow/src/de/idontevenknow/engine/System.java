@@ -11,5 +11,13 @@ import de.idontevenknow.game.state.State;
 public abstract class System {
 	protected State registeredState;
 	
-	public abstract void register(State state);
+	
+
+	public State getRegisteredState() {
+		return registeredState;
+	}
+
+	public void setRegisteredState(State registeredState) {
+		this.registeredState = registeredState;
+	}
 }
