@@ -11,6 +11,8 @@ import de.idontevenknow.engine.Component;
  */
 public abstract class GameObject {
 	protected LinkedList<Component> components;
+	private float velocityX;
+	private float velocityY;
 
 	public LinkedList<Component> getComponents() {
 		return components;
@@ -19,6 +21,22 @@ public abstract class GameObject {
 	public void setComponents(LinkedList<Component> components) {
 		this.components = components;
 	}
+	
+	public float getVelocityX(){
+        return velocityX;
+    }
+    
+    public void setVelocityX(float velocity){
+        this.velocityX = velocity;
+    }
+    
+    public float getVelocityY(){
+        return velocityY;
+    }
+    
+    public void setVelocityY(float velocityY){
+        this.velocityY = velocityY;
+    }
 	
 	
 }
