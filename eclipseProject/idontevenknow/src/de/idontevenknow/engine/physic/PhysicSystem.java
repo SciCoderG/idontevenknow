@@ -14,7 +14,8 @@ public class PhysicSystem extends System{
 	        for(Component c : go.getComponents()){
 	            if(c.getClass() == PhysicComponent.class){
 	                PhysicComponent pc = (PhysicComponent) c;
-	                pc.setX(pc.getX() + delta * go.getVelocity());
+	                pc.setX(pc.getX() + delta * go.getVelocityX());
+	                pc.setY(pc.getY() + delta * go.getVelocityY());
 	            }
 	        }
 	    }
