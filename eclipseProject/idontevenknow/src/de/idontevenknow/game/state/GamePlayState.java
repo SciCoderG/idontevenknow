@@ -12,17 +12,12 @@ public class GamePlayState extends State {
 
 	@Override
 	public void update() {
-		for (GameObject i : objects) {
-
-		}
 
 	}
 
 	@Override
 	public void render() {
-		for(GameObject i : objects){
-			
-		}
+		
 
 	}
 
