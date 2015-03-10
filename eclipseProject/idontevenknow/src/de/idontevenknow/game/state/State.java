@@ -13,7 +13,7 @@ public abstract class State {
 	protected ArrayList<GameObject> objects = new ArrayList<GameObject>();
 	
 	public abstract void init();
-	public abstract void update();
+	public abstract void update(float delta);
 	public abstract void render();
 	public abstract void clean();
 	

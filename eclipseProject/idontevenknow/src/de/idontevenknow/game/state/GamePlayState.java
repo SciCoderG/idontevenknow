@@ -11,8 +11,8 @@ public class GamePlayState extends State {
 	PhysicSystem physicSys;
 
 	@Override
-	public void update() {
-
+	public void update(float delta) {
+		physicSys.update(delta);
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class Game {
 	
 	// TODO
 	public void update(float delta){
-		states.firstElement().update();
+		states.firstElement().update(delta);
 	}
 	
 	//TODO
