@@ -2,7 +2,7 @@ package de.idontevenknow.game;
 
 import java.util.Stack;
 
-import de.idontevenknow.game.state.GameState;
+import de.idontevenknow.game.state.GamePlayState;
 import de.idontevenknow.game.state.State;
 
 
@@ -15,7 +15,7 @@ public class Game {
 	 */
 	public void init(){
 		states = new Stack<State>();
-		states.push(new GameState());
+		states.push(new GamePlayState());
 	}
 	
 	// TODO
