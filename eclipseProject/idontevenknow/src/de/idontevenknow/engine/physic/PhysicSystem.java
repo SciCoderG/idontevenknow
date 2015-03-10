@@ -6,14 +6,15 @@ import de.idontevenknow.game.gameobjects.GameObject;
 
 public class PhysicSystem extends System{
 
-	public void action(){
-	    for(GameObject go : getRegisteredState().getObjects()){
-	        for(Component c : go.getComponents()){
-	            if(c.getClass() == PhysicComponent.class){
-	                
-	            }
-	        }
-	    }
+	@Override
+	public void run() {
+		 for(GameObject go : getRegisteredState().getObjects()){
+		        for(Component c : go.getComponents()){
+		            if(c.getClass() == PhysicComponent.class){
+		                
+		            }
+		        }
+		    }
 	}
 	
 	

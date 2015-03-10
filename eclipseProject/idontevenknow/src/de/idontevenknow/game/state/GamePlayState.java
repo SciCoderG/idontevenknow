@@ -24,7 +24,9 @@ public class GamePlayState extends State {
 	@Override
 	public void init() {
 		physicSys = new PhysicSystem();
+		physicSys.setRegisteredState(this);
 		renderSys = new RenderSystem();
+		renderSys.setRegisteredState(this);
 		objects.add(new Player());
 	}
 

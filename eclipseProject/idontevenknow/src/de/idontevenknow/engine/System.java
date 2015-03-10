@@ -20,4 +20,9 @@ public abstract class System {
 	public void setRegisteredState(State registeredState) {
 		this.registeredState = registeredState;
 	}
+	
+	/**
+	 * always called
+	 */
+	public abstract void run();
 }
