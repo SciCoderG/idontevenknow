@@ -12,7 +12,7 @@ public class PhysicSystem extends EngineSystem{
 	public void run() {
 		 for(GameObject go : getRegisteredState().getObjects()){
 	        for(Component c : go.getComponents()){
-	            if(c.getClass() == PhysicComponent.class){
+	            if(c instanceof PhysicComponent){
 	                PhysicComponent pc = (PhysicComponent) c;
 	                pc.setX(pc.getX() + delta * go.getVelocityX());
 	                pc.setY(pc.getY() + delta * go.getVelocityY());
