@@ -15,6 +15,7 @@ public class RenderSystem extends EngineSystem{
 	private RenderComponent currentRenderComponent;
 	private PhysicComponent currentPhysicComponent;
 	
+	
 	public RenderSystem(){
 		
 	}

@@ -13,18 +13,52 @@ public class PhysicComponent extends Component{
     //at the moment.
     private boolean isCollision = false;
     
-    public PhysicComponent(float x, float y, float width, float height){
+    // velocity belongs here, it is a physical component of an object
+    private float velocityX;
+	private float velocityY;
+	private float maxVelocity;
+    
+    public PhysicComponent(float x, float y, float width, float height, float velocityX, float velocityY, float maxVelocity){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.velocityX = velocityX;
+		this.velocityY = velocityY;
+		this.maxVelocity = maxVelocity;
     }
     
     public PhysicComponent(){
-        this(0.0f,0.0f,10,10);
+        this(0.0f,0.0f,10,10,5, 5, 10);
     }
 
-    public float getX() {
+    
+    
+    public float getVelocityX() {
+		return velocityX;
+	}
+
+	public void setVelocityX(float velocityX) {
+		this.velocityX = velocityX;
+	}
+
+	public float getVelocityY() {
+		return velocityY;
+	}
+
+	public void setVelocityY(float velocityY) {
+		this.velocityY = velocityY;
+	}
+
+	public float getMaxVelocity() {
+		return maxVelocity;
+	}
+
+	public void setMaxVelocity(float maxVelocity) {
+		this.maxVelocity = maxVelocity;
+	}
+
+	public float getX() {
         return x;
     }
 
