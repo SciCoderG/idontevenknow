@@ -11,7 +11,9 @@ import static org.lwjgl.opengl.GL11.*;
  *
  */
 public class Main {
-	private static float currentTime, startTime, delta;
+	private static float currentTime, startTime;
+	private static int fps = 60;
+	private static float delta = 1.0f/(float)fps;
 	private static Game game;
 	
 	
@@ -31,15 +33,22 @@ public class Main {
 	}
 
 	private static void gameLoop() {
-		delta = 1.0f/60.0f;
+		delta = 1.0f/(float)fps;
+		startTime = System.currentTimeMillis();
+		currentTime = System.currentTimeMillis();
 		
 		while (!Display.isCloseRequested()) {
-			
+			if(currentTime-startTime > delta){
+				delta += currentTime-startTime -delta;
+			}
+			startTime = System.currentTimeMillis();
 			glClear(GL_COLOR_BUFFER_BIT); // no need for depth buffer bit, no depth needed in 2d
 			game.update(delta);
 			game.render();
 			Display.update();
-			
+			currentTime = System.currentTimeMillis();
+			Display.sync(fps); // THIS IS WHERE THE CAPPING OF THE FPS HAPPENS (aka the system is
+			// put to sleep, if it is done with the loop faster than the framerate commands
 		}
 	}
 

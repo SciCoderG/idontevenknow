@@ -29,7 +29,7 @@ public class PhysicComponent extends Component{
     }
     
     public PhysicComponent(){
-        this(0.0f,0.0f,10,10,5, 5, 10);
+        this(0.0f,0.0f,20,20,50, 50, 100);
     }
 
     
