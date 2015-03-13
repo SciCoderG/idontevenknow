@@ -3,11 +3,14 @@ package de.idontevenknow.engine.physic;
 import de.idontevenknow.engine.Component;
 
 public class PhysicComponent extends Component{
-    
+    //The Position of the collidable physicsbody of a gameobject
     private float x,y;
     
+    //The width and height of the physicsbody.
     private float width, height;
     
+    //Flag which tells you if there's a collision with another physicsbody
+    //at the moment.
     private boolean isCollision = false;
     
     public PhysicComponent(float x, float y, float width, float height){

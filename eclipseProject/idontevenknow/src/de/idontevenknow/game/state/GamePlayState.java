@@ -32,7 +32,7 @@ public class GamePlayState extends State {
 		physicSys.setRegisteredState(this);
 		renderSys = new RenderSystem();
 		renderSys.setRegisteredState(this);
-		objects.add(new Player());
+		objects.add(new Player(10,10,20));
 	}
 
 	@Override

@@ -13,11 +13,17 @@ public abstract class GameObject {
 	protected LinkedList<Component> components;
 	private float velocityX;
 	private float velocityY;
+	private float maxVelocity;
 	
-	public GameObject(){
+	public GameObject(float veloX, float veloY, float maxVelo){
 		components = new LinkedList<Component>();
+		
+		velocityX = veloX;
+		velocityY = veloY;
+		maxVelocity = maxVelo;
 	}
 	
+	//----------------------Getters and Setters------------------------------//
 	public LinkedList<Component> getComponents() {
 		return components;
 	}
@@ -41,6 +47,15 @@ public abstract class GameObject {
     public void setVelocityY(float velocityY){
         this.velocityY = velocityY;
     }
+    
+    public float getMaxVelocity(){
+        return maxVelocity;
+    }
+    
+    public void setMaxVelocity(float maxVelocity){
+        this.maxVelocity = maxVelocity;
+    }
+    //---------------------------------------------------------------------//
 	
 	
 }

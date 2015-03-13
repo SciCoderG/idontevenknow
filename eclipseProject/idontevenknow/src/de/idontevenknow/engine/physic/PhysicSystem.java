@@ -18,7 +18,6 @@ public class PhysicSystem extends EngineSystem{
 	                pc.setY(pc.getY() + delta * go.getVelocityY());
 	            }
 	        }
-	        
 	    }
 	}
 	
