@@ -11,16 +11,11 @@ import de.idontevenknow.engine.Component;
  */
 public abstract class GameObject {
 	protected LinkedList<Component> components;
-	private float velocityX;
-	private float velocityY;
-	private float maxVelocity;
 	
-	public GameObject(float veloX, float veloY, float maxVelo){
+	// Dont put velocity here, it belongs into physiccomponent
+	
+	public GameObject(){
 		components = new LinkedList<Component>();
-		
-		velocityX = veloX;
-		velocityY = veloY;
-		maxVelocity = maxVelo;
 	}
 	
 	//----------------------Getters and Setters------------------------------//
@@ -32,29 +27,7 @@ public abstract class GameObject {
 		this.components = components;
 	}
 	
-	public float getVelocityX(){
-        return velocityX;
-    }
-    
-    public void setVelocityX(float velocity){
-        this.velocityX = velocity;
-    }
-    
-    public float getVelocityY(){
-        return velocityY;
-    }
-    
-    public void setVelocityY(float velocityY){
-        this.velocityY = velocityY;
-    }
-    
-    public float getMaxVelocity(){
-        return maxVelocity;
-    }
-    
-    public void setMaxVelocity(float maxVelocity){
-        this.maxVelocity = maxVelocity;
-    }
+	
     //---------------------------------------------------------------------//
 	
 	
