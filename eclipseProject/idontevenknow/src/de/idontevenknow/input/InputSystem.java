@@ -10,6 +10,8 @@ import de.idontevenknow.game.gameobjects.GameObject;
 
 public class InputSystem extends EngineSystem{
     
+    Keyboard k;
+    
     @Override
     public void run() {
         // TODO Auto-generated method stub
@@ -18,7 +20,8 @@ public class InputSystem extends EngineSystem{
             for(Component c : go.getComponents()){
                 if(c instanceof InputComponent){
                     InputComponent ic = (InputComponent) c;
-                    
+                    ic.setKey(Keyboard.getEventKey());
+                    System.out.println(ic.getKey() + " " + Keys.A);
                 }
             }
         }

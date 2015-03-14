@@ -1,9 +1,5 @@
 package de.idontevenknow.input;
 
-import org.lwjgl.input.Keyboard;
-
-import com.badlogic.gdx.Input.Keys;
-
 import de.idontevenknow.engine.Component;
 
 public class InputComponent extends Component{
@@ -14,12 +10,11 @@ public class InputComponent extends Component{
         
     }
     
-    public int getKeyDown(){
+    public int getKey(){
         return key;
     }
     
-    public void calculateNewVelocity(float minVelo, float maxVelo, float velo){
-        
+    public void setKey(int key){
+        this.key = key;
     }
-
 }
