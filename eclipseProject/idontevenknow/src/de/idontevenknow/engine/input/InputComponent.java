@@ -1,4 +1,4 @@
-package de.idontevenknow.input;
+package de.idontevenknow.engine.input;
 
 import de.idontevenknow.engine.Component;
 

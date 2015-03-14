@@ -1,9 +1,9 @@
 package de.idontevenknow.game.state;
 
+import de.idontevenknow.engine.input.InputSystem;
 import de.idontevenknow.engine.physic.PhysicSystem;
 import de.idontevenknow.engine.render.RenderSystem;
 import de.idontevenknow.game.gameobjects.Player;
-import de.idontevenknow.input.InputSystem;
 
 public class GamePlayState extends State {
 
