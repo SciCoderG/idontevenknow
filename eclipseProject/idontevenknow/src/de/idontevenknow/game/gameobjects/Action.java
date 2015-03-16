@@ -1,6 +1,6 @@
 package de.idontevenknow.game.gameobjects;
 
-public enum ACTION {
+public enum Action {
     
     IDLE,
     FIRE,
