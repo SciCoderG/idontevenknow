@@ -12,6 +12,8 @@ import de.idontevenknow.engine.Component;
 public abstract class GameObject {
 	protected LinkedList<Component> components;
 	
+	private Movement movement = Movement.IDLE;
+	
 	// Dont put velocity here, it belongs into physiccomponent
 	
 	public GameObject(){
@@ -25,6 +27,14 @@ public abstract class GameObject {
 
 	public void setComponents(LinkedList<Component> components) {
 		this.components = components;
+	}
+	
+	public Movement getMovement(){
+	    return movement;
+	}
+	
+	public void setMovement(Movement movement){
+	    this.movement = movement;
 	}
 	
 	
