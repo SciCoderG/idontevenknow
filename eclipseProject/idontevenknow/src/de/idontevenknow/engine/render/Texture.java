@@ -1,6 +1,5 @@
 package de.idontevenknow.engine.render;
 
-import static org.lwjgl.opengl.GL11.*;
 
 public class Texture {
 
@@ -18,7 +17,6 @@ public class Texture {
 	}
 	
 	public void glbind(){
-		glBindTexture(target, textureID); //bind GL Context to Texture
 		
 	}
 	

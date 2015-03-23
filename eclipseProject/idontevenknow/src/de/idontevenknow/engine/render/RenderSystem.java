@@ -1,8 +1,6 @@
 package de.idontevenknow.engine.render;
 
-import static org.lwjgl.opengl.GL11.*;
 
-import org.lwjgl.util.Color;
 
 import de.idontevenknow.engine.Component;
 import de.idontevenknow.engine.EngineSystem;
@@ -41,20 +39,7 @@ public class RenderSystem extends EngineSystem{
 	}
 
 	private void render(GameObject go) {
-		Color color = currentRenderComponent.getColor();
-		float x = currentPhysicComponent.getX();
-		float y = currentPhysicComponent.getY();
-		float width = currentPhysicComponent.getWidth();
-		float height = currentPhysicComponent.getHeight();
-		glColor3f(color.getRed(), color.getBlue(), color.getGreen());
-		glBegin(GL_QUADS);
-		{
-			glVertex2f(x, y);
-			glVertex2f(x, y + height);
-			glVertex2f(x + width, y + height);
-			glVertex2f(x + width, y);
-		}
-		glEnd();
+		
 	}
 
 	
