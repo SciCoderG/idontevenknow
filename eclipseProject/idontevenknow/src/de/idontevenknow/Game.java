@@ -1,6 +1,9 @@
 package de.idontevenknow;
 
+import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.physics.box2d.Box2D;
 
 /**
  * The Applicationlistener as specified by libgdx.
@@ -9,11 +12,16 @@ import com.badlogic.gdx.ApplicationListener;
  *
  */
 public class Game implements ApplicationListener {
+    
+    private PooledEngine engine;
 
     @Override
     public void create() {
-        // TODO Auto-generated method stub
-
+        // creating the Ashley engine
+        engine = new PooledEngine();
+        
+        // initialise Box2D
+        Box2D.init();
     }
 
     @Override
@@ -24,14 +32,12 @@ public class Game implements ApplicationListener {
 
     @Override
     public void pause() {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void render() {
-        // TODO Auto-generated method stub
-
+        engine.update(Gdx.graphics.getDeltaTime());
     }
 
     @Override
