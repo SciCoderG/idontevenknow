@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-android.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-gwt.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-headless.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-jglfw-natives.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-jglfw.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-lwjgl-natives.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-lwjgl.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-backend-robovm.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-natives.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx-setup.jar"/>
-	<classpathentry kind="lib" path="libgdx/gdx.jar" sourcepath="libgdx/sources">
+	<classpathentry kind="src" output="target/classes" path="src">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/idontevenknow/libgdx/doc.zip!/api"/>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="idontevenknow/libgdx"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
