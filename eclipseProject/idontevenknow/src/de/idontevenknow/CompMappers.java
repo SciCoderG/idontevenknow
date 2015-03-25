@@ -2,8 +2,10 @@ package de.idontevenknow;
 
 import com.badlogic.ashley.core.ComponentMapper;
 
-import de.idontevenknow.physics.PhysicsBodyComponent;
-import de.idontevenknow.physics.PhysicsModifierComponent;
+import de.idontevenknow.menu.MenuButtonComponent;
+import de.idontevenknow.physics.components.PhysicsBodyComponent;
+import de.idontevenknow.physics.components.PhysicsModifierComponent;
+import de.idontevenknow.physics.components.PositionComponent;
 
 /**
  * Used to map components to their entities. Always use this to retrieve a
@@ -18,4 +20,8 @@ public class CompMappers {
             .getFor(PhysicsModifierComponent.class);
     public static final ComponentMapper<PhysicsBodyComponent> physicsBody = ComponentMapper
             .getFor(PhysicsBodyComponent.class);
+    public static final ComponentMapper<PositionComponent> position = ComponentMapper
+            .getFor(PositionComponent.class);
+    public static final ComponentMapper<MenuButtonComponent> menuButton = ComponentMapper
+            .getFor(MenuButtonComponent.class);
 }

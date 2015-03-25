@@ -1,10 +1,13 @@
-package de.idontevenknow.physics;
+package de.idontevenknow.physics.components;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.utils.Pool.Poolable;
+
+import de.idontevenknow.physics.systems.PhysicsSystem;
 
 /**
  * Add this Component to every entity with any kind of physics logic
@@ -54,5 +57,13 @@ public class PhysicsBodyComponent extends Component implements Poolable {
 
     public PhysicsSystem getSystem() {
         return system;
+    }
+    
+    /**
+     * Position in pixel, if the unit vector of Box2D equals physicssystem.getScale() * unit vector
+     * @return
+     */
+    public Vector2 getPosition(){
+        return body.getPosition().scl(system.getScale());
     }
 }

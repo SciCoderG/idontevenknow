@@ -1,4 +1,4 @@
-package de.idontevenknow.physics;
+package de.idontevenknow.physics.components;
 
 import java.util.ArrayList;
 
