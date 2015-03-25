@@ -25,7 +25,7 @@ public class Collision {
      * @param boxHeight
      * @return
      */
-    public static boolean mouseOnBoxCollision(float pointX, float pointY,
+    public static boolean pointOnBoxCollision(float pointX, float pointY,
             float boxPositionX, float boxPositionY, float boxWidth,
             float boxHeight) {
         Vector3 minimum = new Vector3(boxPositionX, boxPositionY, 0);

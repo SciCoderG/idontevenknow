@@ -22,12 +22,14 @@ import de.idontevenknow.physics.components.PhysicsModifierComponent;
 public class PhysicsSystem extends IteratingSystem {
 
     private World world;
+    private Vector2 gravity = new Vector2(0,0);
     private int velocityIterations, positionIterations;
     private float scale = 64.0f;
 
     public PhysicsSystem(int velocityIterations, int positionIterations,
             int priority) {
         super(Family.all(PhysicsModifierComponent.class).get(), priority);
+        world = new World(gravity, true);
         this.velocityIterations = velocityIterations;
         this.positionIterations = positionIterations;
     }

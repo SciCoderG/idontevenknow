@@ -1,13 +1,18 @@
 package de.idontevenknow;
 
+import javax.swing.MenuElement;
+
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 
+import de.idontevenknow.menu.MenuEntityCreator;
 import de.idontevenknow.menu.MenuInputProcessor;
 import de.idontevenknow.physics.systems.PhysicsSystem;
 import de.idontevenknow.physics.systems.UpdatePositionSystem;
@@ -21,6 +26,9 @@ import de.idontevenknow.physics.systems.UpdatePositionSystem;
 public class Game implements ApplicationListener {
 
     private PooledEngine engine;
+ // Zu Testzwecken
+    private OrthographicCamera ortho;
+    private Box2DDebugRenderer debugRenderer;
 
     @Override
     public void create() {
@@ -35,6 +43,12 @@ public class Game implements ApplicationListener {
         //create and add input processors
         setInputProcessors();
 
+        //zu testzwecken
+        ortho = new OrthographicCamera();
+        ortho.setToOrtho(true, Gdx.graphics.getWidth() / EntityCreator.physicsSystem.getScale(), Gdx.graphics.getHeight()/ EntityCreator.physicsSystem.getScale());
+        debugRenderer = new Box2DDebugRenderer();
+        
+        MenuEntityCreator.createMenuButton(0,0,300,300, "game");
     }
 
     private void addSystems() {
@@ -45,8 +59,9 @@ public class Game implements ApplicationListener {
                 GameConstants.BOX2D_VELOCITY_ITERATIONS,
                 GameConstants.BOX2D_POSITIONS_ITERATIONS,
                 GameConstants.PHYSICS_PRIORITY);
-        physicsSystem.setGravity(new Vector2(0,0)); // erstmal keine gravity, brauchen wir in unserem Spiel nicht
+
         engine.addSystem(physicsSystem);
+        physicsSystem.setGravity(new Vector2(0,0)); // erstmal keine gravity, brauchen wir in unserem Spiel nicht
         EntityCreator.physicsSystem = physicsSystem; 
         
         //add UpdatePositionSystem
@@ -79,9 +94,11 @@ public class Game implements ApplicationListener {
 
     }
 
+    
     @Override
     public void render() {
         engine.update(Gdx.graphics.getDeltaTime());
+        debugRenderer.render(EntityCreator.physicsSystem.getWorld(), ortho.combined);
     }
 
     @Override
