@@ -51,12 +51,12 @@ public class MenuInputProcessor implements InputProcessor {
             PositionComponent position = CompMappers.position.get(entity);
             MenuButtonComponent menuButton = CompMappers.menuButton.get(entity);
 
-            if (Collision.pointOnBoxCollision(screenX, screenY, position.x,
-                    position.y, menuButton.width, menuButton.height)) {
+            if (Collision.pointOnBoxCollision(screenX, screenY, position.x - menuButton.width/2,
+                    position.y - menuButton.height/2, menuButton.width, menuButton.height)) {
                 switch (menuButton.target) {
                 case "game":
                     //zum testen
-                    MenuEntityCreator.createMenuButton(50, 50,100,100, "main");
+                    MenuEntityCreator.createMenuButton(100, 100,100,100, "main");
                     break;
                 case "main":
                     break;

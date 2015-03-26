@@ -5,6 +5,7 @@ import com.badlogic.gdx.utils.Pool.Poolable;
 
 /**
  * position in pixel. Important, 1pixel != 1meter in Box2D!
+ * Position is the Center of the Body!!
  * @author David
  *
  */

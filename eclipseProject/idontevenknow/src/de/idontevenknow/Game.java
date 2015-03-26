@@ -1,12 +1,9 @@
 package de.idontevenknow;
 
-import javax.swing.MenuElement;
-
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
@@ -34,7 +31,8 @@ public class Game implements ApplicationListener {
     public void create() {
         // creating the Ashley engine
         engine = new PooledEngine();
-
+        EntityCreator.engine = engine;
+        
         // initialise Box2D
         Box2D.init();
 
@@ -48,16 +46,17 @@ public class Game implements ApplicationListener {
         ortho.setToOrtho(true, Gdx.graphics.getWidth() / EntityCreator.physicsSystem.getScale(), Gdx.graphics.getHeight()/ EntityCreator.physicsSystem.getScale());
         debugRenderer = new Box2DDebugRenderer();
         
-        MenuEntityCreator.createMenuButton(0,0,300,300, "game");
+        MenuEntityCreator.createMainMenu();
     }
 
     private void addSystems() {
-        EntityCreator.engine = engine;
+        
         
         // add PhysicSystem
         PhysicsSystem physicsSystem = new PhysicsSystem(
                 GameConstants.BOX2D_VELOCITY_ITERATIONS,
                 GameConstants.BOX2D_POSITIONS_ITERATIONS,
+                GameConstants.BOX2D_SCALE,
                 GameConstants.PHYSICS_PRIORITY);
 
         engine.addSystem(physicsSystem);
@@ -98,6 +97,7 @@ public class Game implements ApplicationListener {
     @Override
     public void render() {
         engine.update(Gdx.graphics.getDeltaTime());
+        // zu testzwecken
         debugRenderer.render(EntityCreator.physicsSystem.getWorld(), ortho.combined);
     }
 

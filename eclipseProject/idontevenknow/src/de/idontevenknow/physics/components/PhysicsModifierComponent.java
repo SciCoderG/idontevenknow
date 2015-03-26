@@ -14,7 +14,7 @@ import com.badlogic.gdx.utils.Pool.Poolable;
  */
 public class PhysicsModifierComponent extends Component implements Poolable{
 
-    public final ArrayList<Runnable> runnables = new ArrayList();
+    public final ArrayList<Runnable> runnables = new ArrayList<Runnable>();
 
     @Override
     public void reset() {

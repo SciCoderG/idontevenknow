@@ -5,9 +5,11 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.utils.Pool.Poolable;
 
 import de.idontevenknow.physics.systems.PhysicsSystem;
+import de.idontevenknow.physics.utils.PhysicsFixtureDef;
 
 /**
  * Add this Component to every entity with any kind of physics logic
@@ -45,6 +47,17 @@ public class PhysicsBodyComponent extends Component implements Poolable {
         system.getWorld().destroyBody(body);
         system = null;
         entity = null;
+    }
+    
+    /**
+     * Creates a fixture for the Box2D body and sets the user data automatically to the component
+     * @param fixtureDef
+     * @return
+     */
+    public Fixture createFixture(PhysicsFixtureDef fixtureDef) {
+        Fixture fixture = body.createFixture(fixtureDef);
+        fixture.setUserData(this);
+        return fixture;
     }
 
     public Body getBody() {
