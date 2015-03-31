@@ -18,19 +18,19 @@ public class Collision {
      * @param pointY
      *            point position on y axis
      * @param boxPositionX
-     *            box position on x axis
+     *            center box position on x axis
      * @param boxPositionY
-     *            box position on y axis
+     *            center box position on y axis
      * @param boxWidth
      * @param boxHeight
      * @return
      */
     public static boolean pointOnBoxCollision(float pointX, float pointY,
-            float boxPositionX, float boxPositionY, float boxWidth,
+            float centerBoxPositionX, float centerBoxPositionY, float boxWidth,
             float boxHeight) {
-        Vector3 minimum = new Vector3(boxPositionX, boxPositionY, 0);
-        Vector3 maximum = new Vector3(boxPositionX + boxWidth, boxPositionY
-                + boxHeight, 0);
+        Vector3 minimum = new Vector3(centerBoxPositionX - boxWidth/2, centerBoxPositionY - boxHeight/2, 0);
+        Vector3 maximum = new Vector3(centerBoxPositionX + boxWidth/2, centerBoxPositionY
+                + boxHeight/2, 0);
 
         BoundingBox box = new BoundingBox(minimum, maximum);
 

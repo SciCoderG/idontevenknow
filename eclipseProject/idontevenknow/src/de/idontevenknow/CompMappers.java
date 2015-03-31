@@ -2,7 +2,9 @@ package de.idontevenknow;
 
 import com.badlogic.ashley.core.ComponentMapper;
 
+import de.idontevenknow.input.InputComponent;
 import de.idontevenknow.menu.MenuButtonComponent;
+import de.idontevenknow.movement.MovementComponent;
 import de.idontevenknow.physics.components.PhysicsBodyComponent;
 import de.idontevenknow.physics.components.PhysicsModifierComponent;
 import de.idontevenknow.physics.components.PositionComponent;
@@ -24,4 +26,8 @@ public class CompMappers {
             .getFor(PositionComponent.class);
     public static final ComponentMapper<MenuButtonComponent> menuButton = ComponentMapper
             .getFor(MenuButtonComponent.class);
+    public static final ComponentMapper<InputComponent> input = ComponentMapper
+            .getFor(InputComponent.class);
+    public static final ComponentMapper<MovementComponent> movement = ComponentMapper
+            .getFor(MovementComponent.class);
 }

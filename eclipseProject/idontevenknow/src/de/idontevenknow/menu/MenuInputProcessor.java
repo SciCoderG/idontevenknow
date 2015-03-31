@@ -8,6 +8,7 @@ import com.badlogic.gdx.InputProcessor;
 
 import de.idontevenknow.CompMappers;
 import de.idontevenknow.EntityCreator;
+import de.idontevenknow.game.GameEntityCreator;
 import de.idontevenknow.math.utils.Collision;
 import de.idontevenknow.physics.components.PositionComponent;
 
@@ -51,12 +52,12 @@ public class MenuInputProcessor implements InputProcessor {
             PositionComponent position = CompMappers.position.get(entity);
             MenuButtonComponent menuButton = CompMappers.menuButton.get(entity);
 
-            if (Collision.pointOnBoxCollision(screenX, screenY, position.x - menuButton.width/2,
-                    position.y - menuButton.height/2, menuButton.width, menuButton.height)) {
+            if (Collision.pointOnBoxCollision(screenX, screenY, position.x,
+                    position.y, menuButton.width, menuButton.height)) {
                 switch (menuButton.target) {
                 case "game":
                     //zum testen
-                    MenuEntityCreator.createMenuButton(100, 100,100,100, "main");
+                    GameEntityCreator.loadLevel();
                     break;
                 case "main":
                     break;

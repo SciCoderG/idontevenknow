@@ -34,17 +34,18 @@ public class PhysicsBodyComponent extends Component implements Poolable {
      *            Entity to which the Component is added
      */
     public void init(BodyDef bodyDef, PhysicsSystem system, Entity entity) {
+        this.system = system;
+        this.entity = entity;
         if(body != null){
             reset();
         }
-        this.system = system;
         body = system.getWorld().createBody(bodyDef);
-        this.entity = entity;
     }
 
     @Override
     public void reset() {
         system.getWorld().destroyBody(body);
+        body = null;
         system = null;
         entity = null;
     }

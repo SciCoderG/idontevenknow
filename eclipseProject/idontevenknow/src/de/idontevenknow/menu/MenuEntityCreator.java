@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
 import de.idontevenknow.EntityCreator;
@@ -21,6 +21,11 @@ import de.idontevenknow.physics.utils.PhysicsFixtureDef;
  *
  */
 public class MenuEntityCreator extends EntityCreator {
+private static MenuInputProcessor menuInput = new MenuInputProcessor();
+    
+    public static MenuInputProcessor getMenuInputProcessor(){
+        return menuInput;
+    }
 
     /**
      * Creates the MainMenu
@@ -28,6 +33,8 @@ public class MenuEntityCreator extends EntityCreator {
      * @return List of Entities created
      */
     public static List<Entity> createMainMenu() {
+        initMenuCreation();
+        
         List<Entity> toReturn = new ArrayList<Entity>();
         float width = 300.0f;
         float height = 100.0f;
@@ -44,14 +51,16 @@ public class MenuEntityCreator extends EntityCreator {
     /**
      * Creates a Menu Button. Use World Coordinates, not Box2D coordinates!
      * 
-     * @param x center position on x axis
-     * @param y center position on y axis
+     * @param x
+     *            center position on x axis
+     * @param y
+     *            center position on y axis
      * @param width
      * @param height
      * @param target
      * @return created entity
      */
-    public static Entity createMenuButton(float x, float y, float width,
+    private static Entity createMenuButton(float x, float y, float width,
             float height, String target) {
         Entity entity = engine.createEntity();
 
@@ -85,6 +94,15 @@ public class MenuEntityCreator extends EntityCreator {
         //
         engine.addEntity(entity);
         return entity;
+    }
+
+    /**
+     * Initializes the systems and Input Processors needed for Menus to work
+     */
+    public static void initMenuCreation() {
+        // add the menuInputProcessor
+        InputMultiplexer multi = (InputMultiplexer) Gdx.input.getInputProcessor();
+        multi.addProcessor(menuInput);
     }
 
 }
